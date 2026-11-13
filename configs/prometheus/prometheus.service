@@ -1,0 +1,36 @@
+[Unit]
+Description=Loki service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=loki
+ExecStart=/usr/bin/loki -config.file /etc/loki/config.yml
+# Give a reasonable amount of time for the server to start up/shut down
+TimeoutSec = 120
+Restart = on-failure
+RestartSec = 2
+
+[Install]
+WantedBy=multi-user.target
+mar@marsnts:/$ cat /etc/systemd/system/prometheus.service
+[Unit]
+Description=Prometheus
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=root
+Type=simple
+WorkingDirectory=/var/git/projects/monitoring-system
+ExecStart=/usr/local/bin/prometheus \
+    --config.file=/var/git/projects/monitoring-system/prometheus.yml \
+    --storage.tsdb.path=/var/git/projects/monitoring-system/data \
+    --web.listen-address=127.0.0.1:9090 \
+    --web.route-prefix=/prometheus/ \
+    --web.external-url=https://marsnts.tarsier-map.ts.net:8443/prometheus
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
