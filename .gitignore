@@ -1,3 +1,52 @@
+
+# Environment variables
 .env
+.env.*
+!.env.example
+
+# Credentials and secrets
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+credentials/
+secrets/
+*.secret
+
+# Local configurations
+*.local
+*.local.yml
+*.local.yaml
+*.local.conf
+
+# Logs
+*.log
+logs/
+
+# Backups
+*.bak
+*.backup
+*.old
+
+# Monitoring data
+prometheus-data/
+loki-data/
+grafana-data/
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+
+# Additional
 Readme.v2.md
 template.md

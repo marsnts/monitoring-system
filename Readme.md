@@ -7,7 +7,7 @@ The system uses an integrated monitoring stack consisting of Grafana, Prometheus
 
 ![/assets/System_Architecture_Diagram.png](/assets/System_Architecture_Diagram.png)
 
-The Homelab Monitoring System follows a centralized, single-VM deployment architecture hosted on a virtualization platform. The infrastructure currently runs on VMware Workstation Pro, with an equivalent replica available on Proxmox VE.
+The Homelab Monitoring System follows a centralized, single-VM deployment architecture hosted on a virtualization platform. The infrastructure is developed and validated using VMware Workstation Pro before deployment to Proxmox VE (WIP), which serves as the final production virtualization environment.
 
 A single Ubuntu Server 26.04 virtual machine hosts all monitoring and web services, including Grafana, Prometheus, Loki, Grafana Alloy, Nginx, and the required exporters and scrapers.
 
@@ -62,6 +62,14 @@ The production deployment uses a single Ubuntu Server 26.04 virtual machine with
 Tailscale provides secure remote connectivity to the homelab environment. Tailscale Funnel enables public access to the portfolio website, while Tailscale Serve provides private access to monitoring services.
 
 Nginx acts as the reverse proxy for incoming web traffic, routing requests to their respective backend services.
+### Security Practices
+
+- Credentials are stored outside the public repository.
+- Sensitive environment variables are excluded through .gitignore.
+- Public configuration examples use sanitized values.
+- Administrative interfaces are not intentionally exposed
+  through public access endpoints.
+- Remote access is managed through Tailscale.
 
 ---
 ## System Objectives
@@ -91,6 +99,7 @@ The current implementation has several infrastructure and operational limitation
 The following enhancements may be considered as the infrastructure evolves:
 
 - Distribute monitoring services across multiple virtual machines.
+- Adding Proxmox exporter to monitor virtual environement.
 - Implement automated backups and disaster recovery procedures.
 - Introduce dedicated or network-attached storage for monitoring data.
 - Configure Grafana Alerting or Prometheus Alertmanager for proactive notifications.

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Readme.md",
+                "file": "notes/00-installation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Readme"
+              "title": "00-installation"
             }
           }
         ]
@@ -191,8 +191,11 @@
   },
   "active": "ff4772cc08708477",
   "lastOpenFiles": [
-    "Readme.v2.md",
+    "assets/Grafana_Dashboard.png",
+    "assets/Grafana Dashboard.png",
+    "assets/Screenshot 2026-11-14 at 09-40-22 Node Exporter Full - Dashboards - Grafana.png",
     "Readme.md",
+    "Readme.v2.md",
     "notes/concepts-learned.md",
     "notes/resources.md",
     "notes/00-installation.md",

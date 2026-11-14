@@ -1,3 +1,8 @@
+
+### Prerequisites
+
+I currently have a [homelab](https://github.com/marsnts/homelab) configurated in my machine. This includes installation of VMs and setting up nginx and Tailscale.
+
 ### 00 Exporters Setup
 Use the following exporters for different metrics. Refer to [concepts-learned](notes/concepts-learned.md) for exporters notes.
 
@@ -345,6 +350,11 @@ Nginx = 14900
 Node = 1860
 Loki = 13865 , 16101
 Loki NGINX Dashboard = 24306
+
+#### Sample Grafana Dashboard
+
+![Grafana_Dashboard](/assets/Grafana_Dashboard.png)
+
 ### 05 Set Up Alerts
 
 Edit `prometheus.yml`:
