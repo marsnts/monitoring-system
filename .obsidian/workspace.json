@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "template.md",
+                "file": "Readme.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "template"
+              "title": "Readme"
             }
           }
         ]
@@ -191,25 +191,26 @@
   },
   "active": "ff4772cc08708477",
   "lastOpenFiles": [
-    "New Text Document.txt",
     "Readme.v2.md",
-    "template.md",
     "Readme.md",
     "notes/concepts-learned.md",
-    "src/setup_prometheus.sh",
     "notes/resources.md",
-    "notes/02-architecture.md",
     "notes/00-installation.md",
+    "notes/01-setup-errors.md",
+    "notes/02-architecture.md",
+    "asset/Sytstem_Architecture_Diagram.png.md",
+    "assets/System_Architecture_Diagram.png",
+    "asset",
+    "assets",
+    "New folder",
+    "template.md",
+    "New Text Document.txt",
+    "src/setup_prometheus.sh",
     "configs/prometheus",
     "configs/grafana",
     "configs/alloy",
     "configs/nginx",
     "configs/loki",
-    "configs/loki/config.yaml",
-    "configs/nginx/nginx.conf",
-    "configs/alloy/config.alloy",
-    "configs/grafana/grafana.ini",
-    "notes/01-setup-errors.md",
     "Untitled.md",
     "Untitled 1.md",
     "07 Additional Configuration.md",

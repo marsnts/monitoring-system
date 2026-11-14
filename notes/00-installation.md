@@ -601,9 +601,7 @@ server {
     root /var/www/static-resume;
     index index.html index.htm;
 
-    # Trust the Tailscale IP and local loopback
-    set_real_ip_from 100.64.0.0/10;
-    set_real_ip_from 127.0.0.1;
+
 
     # Extract true remote visitor IP sent by the Funnel
     real_ip_header X-Forwarded-For;
@@ -626,7 +624,11 @@ server {
 server {
     listen 127.0.0.1:8083;
     server_name localhost;
-
+   
+	# Trust the Tailscale IP and local loopback
+    set_real_ip_from 100.64.0.0/10;
+    set_real_ip_from 127.0.0.1;
+    
     # Common proxy headers to keep configs clean
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
@@ -721,3 +723,17 @@ serve_from_sub_path = true
 Note that `;` is a comment tag. Remove leading `;` for the configuration to take effect.
 
 ### 09 Dashboard Creation (WIP)
+
+
+### Environment Quick Reference
+
+| Service                       | Port    | Default Config Path              | Systemd Service Name        |
+| :---------------------------- | :------ | :------------------------------- | :-------------------------- |
+| **Prometheus**                | `9090`  | `/etc/prometheus/prometheus.yml` | `prometheus.service`        |
+| **Grafana**                   | `3000`  | `/etc/grafana/grafana.ini`       | `grafana-server.service`    |
+| **Node Exporter**             | `9100`  | *N/A (Flags only)*               | `node_exporter.service`     |
+| **NGINX-Prometheus Exporter** |         | *N/A (Flags only)*               | `nginx-prometheus-exporter` |
+| **Grafana Loki**              | `9096`  | `/etc/loki/config.yml`           | `loki.service`              |
+| **Grafana Alloy**             | `12345` | `/etc/alloy/config.alloy`        | `alloy.service`             |
+| **Tailscale Funnel**          | `443`   |                                  | `tailscaled.service`        |
+| **Tailscale Serve**           | `8443`  |                                  | `tailscale.service`         |

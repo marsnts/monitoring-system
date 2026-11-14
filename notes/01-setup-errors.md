@@ -1,5 +1,5 @@
 
-Exporter Issues:
+**Exporter Issues:**
 ##### Ensure the Exporters is present on configured PATH
 
 `status=203/EXEC` means that systemd tried to run the exporter but failed to execute the binary file. This can be triggered by different reasons.
